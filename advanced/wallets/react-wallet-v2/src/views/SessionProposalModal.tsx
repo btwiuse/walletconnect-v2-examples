@@ -284,6 +284,8 @@ export default function SessionProposalModal() {
 
   const namespaces = useMemo(() => {
     try {
+      console.log("building namespaces proposal", proposal);
+      console.log("building namespaces supportedNamespaces", supportedNamespaces);
       // the builder throws an exception if required namespaces are not supported
       const approvedNamespaces = buildApprovedNamespaces({
         proposal: proposal.params,
