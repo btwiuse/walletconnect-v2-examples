@@ -46,6 +46,17 @@ export default function HomePage() {
       <Text h4 css={{ marginBottom: '$5' }}>
         Mainnets
       </Text>
+      {Object.entries(POLKADOT_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+        <AccountCard
+          key={name}
+          name={name}
+          logo={logo}
+          rgb={rgb}
+          address={polkadotAddress}
+          chainId={caip10}
+          data-testid={'chain-card-' + caip10.toString()}
+        />
+      ))}
       {Object.entries(EIP155_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
         <AccountCard
           key={name}
@@ -75,17 +86,6 @@ export default function HomePage() {
           logo={logo}
           rgb={rgb}
           address={solanaAddress}
-          chainId={caip10}
-          data-testid={'chain-card-' + caip10.toString()}
-        />
-      ))}
-      {Object.entries(POLKADOT_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
-        <AccountCard
-          key={name}
-          name={name}
-          logo={logo}
-          rgb={rgb}
-          address={polkadotAddress}
           chainId={caip10}
           data-testid={'chain-card-' + caip10.toString()}
         />
@@ -151,6 +151,17 @@ export default function HomePage() {
           <Text h4 css={{ marginBottom: '$5' }}>
             Testnets
           </Text>
+          {Object.entries(POLKADOT_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+            <AccountCard
+              key={name}
+              name={name}
+              logo={logo}
+              rgb={rgb}
+              address={polkadotAddress}
+              chainId={caip10}
+              data-testid={'chain-card-' + caip10.toString()}
+            />
+          ))}
           {Object.entries(EIP155_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
             <AccountCard
               key={name}
@@ -204,17 +215,6 @@ export default function HomePage() {
               logo={logo}
               rgb={rgb}
               address={solanaAddress}
-              chainId={caip10}
-              data-testid={'chain-card-' + caip10.toString()}
-            />
-          ))}
-          {Object.entries(POLKADOT_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
-            <AccountCard
-              key={name}
-              name={name}
-              logo={logo}
-              rgb={rgb}
-              address={polkadotAddress}
               chainId={caip10}
               data-testid={'chain-card-' + caip10.toString()}
             />
