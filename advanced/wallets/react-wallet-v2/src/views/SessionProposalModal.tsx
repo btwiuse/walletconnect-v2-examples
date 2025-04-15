@@ -165,7 +165,7 @@ export default function SessionProposalModal() {
       polkadot: {
         chains: polkadotChains,
         methods: polkadotMethods,
-        events: [],
+        events: ['accountsChanged', 'chainChanged'],
         accounts: polkadotChains
           .map(chain => polkadotAddresses.map(address => `${chain}:${address}`))
           .flat()
