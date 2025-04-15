@@ -14,14 +14,6 @@ export const POLKADOT_MAINNET_CHAINS = {
     rgb: '230, 1, 122',
     rpc: '',
     namespace: 'polkadot'
-  },
-  'polkadot:91b171bb158e2d3848fa23a9f1c25182': {
-    chainId: '91b171bb158e2d3848fa23a9f1c25182',
-    name: 'Polkadot',
-    logo: '/chain-logos/polkadot.svg',
-    rgb: '230, 1, 122',
-    rpc: '',
-    namespace: 'polkadot'
   }
 }
 
@@ -30,14 +22,6 @@ export const POLKADOT_TEST_CHAINS = {
     chainId: '525639f713f397dcf839bd022cd821f3',
     name: 'Vara Testnet',
     logo: '/chain-logos/vara-testnet.png',
-    rgb: '218, 104, 167',
-    rpc: '',
-    namespace: 'polkadot'
-  },
-  'polkadot:e143f23803ac50e8f6f8e62695d1ce9e': {
-    chainId: 'e143f23803ac50e8f6f8e62695d1ce9e',
-    name: 'Polkadot Westend',
-    logo: '/chain-logos/westend.svg',
     rgb: '218, 104, 167',
     rpc: '',
     namespace: 'polkadot'
