@@ -1,4 +1,8 @@
-module.exports = {
+const withPWA = require('next-pwa')({
+  dest: 'public'
+})
+
+module.exports = withPWA({
   output: 'export',
   images: {
     unoptimized: true,
@@ -38,4 +42,4 @@ module.exports = {
       }
     ]
   }
-}
+})

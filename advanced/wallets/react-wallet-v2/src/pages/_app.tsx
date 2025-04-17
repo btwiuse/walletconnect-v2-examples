@@ -1,6 +1,7 @@
 import { Toaster } from 'react-hot-toast'
 import { useEffect } from 'react'
 import { createTheme, NextUIProvider } from '@nextui-org/react'
+import Head from 'next/head'
 
 import Layout from '@/components/Layout'
 import Modal from '@/components/Modal'
@@ -30,6 +31,10 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [initialized])
   return (
     <NextUIProvider theme={createTheme({ type: 'dark' })}>
+      <Head>
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#000000" />
+      </Head>
       <Layout initialized={initialized}>
         <Toaster />
         <Component {...pageProps} />
