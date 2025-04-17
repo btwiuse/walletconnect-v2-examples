@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <NextUIProvider theme={createTheme({ type: 'dark' })}>
       <Head>
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="manifest" type="application/manifest+json" href="/manifest.json" />
         <meta name="theme-color" content="#000000" />
       </Head>
       <Layout initialized={initialized}>
