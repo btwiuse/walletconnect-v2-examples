@@ -15,7 +15,7 @@ import { Text } from '@nextui-org/react'
 import { Fragment } from 'react'
 import { useSnapshot } from 'valtio'
 import useSmartAccounts from '@/hooks/useSmartAccounts'
-import { BIP122_CHAINS } from '@/data/Bip122Data'
+import { BITCOIN_MAINNET, BITCOIN_TESTNET } from '@/data/Bip122Data'
 import { useRouter } from 'next/router'
 import ChainAbstractionBalanceCard from '@/components/ChainAbstractionBalanceCard'
 import { encodeAddress } from '@polkadot/util-crypto'
@@ -154,7 +154,7 @@ export default function HomePage() {
           />
         ))}
       {bip122Enabled &&
-        Object.entries(BIP122_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+        Object.entries(BITCOIN_MAINNET).map(([caip10, { name, logo, rgb }]) => (
           <AccountCard
             key={name}
             name={name}
@@ -162,7 +162,7 @@ export default function HomePage() {
             rgb={rgb}
             address={bip122Address}
             chainId={caip10}
-            data-testid={'chain-card-' + caip10.toString()}
+            data-testid={"chain-card-" + caip10.toString()}
           />
         ))}
 
@@ -301,6 +301,18 @@ export default function HomePage() {
                 address={kadenaAddress}
                 chainId={caip10}
                 data-testid={'chain-card-' + caip10.toString()}
+              />
+            ))}
+          {bip122Enabled &&
+            Object.entries(BITCOIN_TESTNET).map(([caip10, { name, logo, rgb }]) => (
+              <AccountCard
+                key={name}
+                name={name}
+                logo={logo}
+                rgb={rgb}
+                address={bip122Address}
+                chainId={caip10}
+                data-testid={"chain-card-" + caip10.toString()}
               />
             ))}
         </Fragment>
