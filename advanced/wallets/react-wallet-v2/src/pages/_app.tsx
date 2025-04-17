@@ -37,7 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-title" content="WalletConnect" />
-        <link rel="apple-touch-icon" href="./wallet-connect-logo-300x300.png" />
+        <link rel="apple-touch-icon" href="/wallet-connect-logo-180x180.png" />
       </Head>
       <Layout initialized={initialized}>
         <Toaster />
