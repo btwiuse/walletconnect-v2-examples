@@ -31,7 +31,7 @@ export default class PolkadotLib {
     await cryptoWaitReady()
 
     // create a keyring to load the account.
-    const keyring = new Keyring({ type: 'sr25519', ss58Format: 1 })
+    const keyring = new Keyring({ type: 'sr25519' })
 
     mnemonic = mnemonic || mnemonicGenerate()
     const keypair = keyring.createFromUri(mnemonic)
@@ -41,6 +41,10 @@ export default class PolkadotLib {
 
   public getAddress() {
     return this.keypair.address
+  }
+
+  public getPublicKey() {
+    return u8aToHex(this.keypair.publicKey)
   }
 
   public getMnemonic() {

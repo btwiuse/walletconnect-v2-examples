@@ -18,6 +18,7 @@ import useSmartAccounts from '@/hooks/useSmartAccounts'
 import { BIP122_CHAINS } from '@/data/Bip122Data'
 import { useRouter } from 'next/router'
 import ChainAbstractionBalanceCard from '@/components/ChainAbstractionBalanceCard'
+import { encodeAddress } from '@polkadot/util-crypto'
 
 export default function HomePage() {
   const {
@@ -46,13 +47,13 @@ export default function HomePage() {
       <Text h4 css={{ marginBottom: '$5' }}>
         Mainnets
       </Text>
-      {Object.entries(POLKADOT_MAINNET_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+      {Object.entries(POLKADOT_MAINNET_CHAINS).map(([caip10, { name, logo, rgb, ss58Format }]) => (
         <AccountCard
           key={name}
           name={name}
           logo={logo}
           rgb={rgb}
-          address={polkadotAddress}
+          address={encodeAddress(polkadotAddress, ss58Format)}
           chainId={caip10}
           data-testid={'chain-card-' + caip10.toString()}
         />
@@ -151,13 +152,13 @@ export default function HomePage() {
           <Text h4 css={{ marginBottom: '$5' }}>
             Testnets
           </Text>
-          {Object.entries(POLKADOT_TEST_CHAINS).map(([caip10, { name, logo, rgb }]) => (
+          {Object.entries(POLKADOT_TEST_CHAINS).map(([caip10, { name, logo, rgb, ss58Format }]) => (
             <AccountCard
               key={name}
               name={name}
               logo={logo}
               rgb={rgb}
-              address={polkadotAddress}
+              address={encodeAddress(polkadotAddress, ss58Format)}
               chainId={caip10}
               data-testid={'chain-card-' + caip10.toString()}
             />
