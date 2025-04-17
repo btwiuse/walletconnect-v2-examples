@@ -29,7 +29,17 @@ export default function SettingsPage() {
     safeSmartAccountEnabled,
     biconomySmartAccountEnabled,
     moduleManagementEnabled,
-    chainAbstractionEnabled
+    chainAbstractionEnabled,
+    eip155Enabled,
+    polkadotEnabled,
+    solanaEnabled,
+    nearEnabled,
+    cosmosEnabled,
+    multiversxEnabled,
+    tronEnabled,
+    tezosEnabled,
+    kadenaEnabled,
+    bip122Enabled
   } = useSnapshot(SettingsStore.state)
 
   return (
@@ -172,6 +182,96 @@ export default function SettingsPage() {
           ) : (
             <Text color="$gray400">This feature requires testnets</Text>
           )}
+        </Col>
+      </Row>
+
+      <Divider y={2} />
+
+      <Row>
+        <Col>
+          <Text h4 css={{ marginBottom: '$5' }}>
+            Address Families
+          </Text>
+          <Row justify="space-between" align="center">
+            <Text>EIP155</Text>
+            <Switch
+              checked={eip155Enabled}
+              onChange={SettingsStore.toggleEip155Enabled}
+              data-testid="settings-toggle-eip155"
+            />
+          </Row>
+          <Row justify="space-between" align="center">
+            <Text>Polkadot</Text>
+            <Switch
+              checked={polkadotEnabled}
+              onChange={SettingsStore.togglePolkadotEnabled}
+              data-testid="settings-toggle-polkadot"
+            />
+          </Row>
+          <Row justify="space-between" align="center">
+            <Text>Solana</Text>
+            <Switch
+              checked={solanaEnabled}
+              onChange={SettingsStore.toggleSolanaEnabled}
+              data-testid="settings-toggle-solana"
+            />
+          </Row>
+          <Row justify="space-between" align="center">
+            <Text>Near</Text>
+            <Switch
+              checked={nearEnabled}
+              onChange={SettingsStore.toggleNearEnabled}
+              data-testid="settings-toggle-near"
+            />
+          </Row>
+          <Row justify="space-between" align="center">
+            <Text>Cosmos</Text>
+            <Switch
+              checked={cosmosEnabled}
+              onChange={SettingsStore.toggleCosmosEnabled}
+              data-testid="settings-toggle-cosmos"
+            />
+          </Row>
+          <Row justify="space-between" align="center">
+            <Text>MultiversX</Text>
+            <Switch
+              checked={multiversxEnabled}
+              onChange={SettingsStore.toggleMultiversxEnabled}
+              data-testid="settings-toggle-multiversx"
+            />
+          </Row>
+          <Row justify="space-between" align="center">
+            <Text>Tron</Text>
+            <Switch
+              checked={tronEnabled}
+              onChange={SettingsStore.toggleTronEnabled}
+              data-testid="settings-toggle-tron"
+            />
+          </Row>
+          <Row justify="space-between" align="center">
+            <Text>Tezos</Text>
+            <Switch
+              checked={tezosEnabled}
+              onChange={SettingsStore.toggleTezosEnabled}
+              data-testid="settings-toggle-tezos"
+            />
+          </Row>
+          <Row justify="space-between" align="center">
+            <Text>Kadena</Text>
+            <Switch
+              checked={kadenaEnabled}
+              onChange={SettingsStore.toggleKadenaEnabled}
+              data-testid="settings-toggle-kadena"
+            />
+          </Row>
+          <Row justify="space-between" align="center">
+            <Text>BIP122</Text>
+            <Switch
+              checked={bip122Enabled}
+              onChange={SettingsStore.toggleBip122Enabled}
+              data-testid="settings-toggle-bip122"
+            />
+          </Row>
         </Col>
       </Row>
 
