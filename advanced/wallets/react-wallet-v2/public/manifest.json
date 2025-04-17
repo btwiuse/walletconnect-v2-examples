@@ -1,0 +1,16 @@
+{
+  "short_name": "WalletConnect",
+  "name": "WalletConnect React Wallet",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "./wallet-connect-logo-300x300.png",
+      "sizes": "300x300",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
